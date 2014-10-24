@@ -17,7 +17,7 @@
       </div>
     </div>
   <script>
-    $('speak').click(function(){
+    $('#speak').click(function(){
       $.get("https://2ebaf878.ngrok.com/speak?text="+encodeURIComponent($('#text').val()),function(err){
         if(err){
           alert(err);
