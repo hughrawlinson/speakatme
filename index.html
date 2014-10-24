@@ -10,14 +10,14 @@
       <div class="col-sm-6 col-sm-offset-3">
         <h1>Speak at Hugh</h1>
         <p>Speak at Hugh by typing words into this text box and clicking the 'speak' button</p>
-        <form action='#'>
+        <form action='#' id="speakform">
           <input type="text" id="text" placeholder="Words!" />
-          <button type="button" class="btn btn-primary" id="speak">Speak</button>
+          <button type="submit" class="btn btn-primary" id="speak">Speak</button>
         </form>
       </div>
     </div>
   <script>
-    $('#speak').click(function(){
+    $('#speakform').submit(function(){
       $.get("https://2ebaf878.ngrok.com/speak?text="+encodeURIComponent($('#text').val()),function(err){
         if(err){
           alert(err);
