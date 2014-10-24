@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Speak at Hugh</title>
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css"/>
+    <script src="code.jquery.com/jquery-latest.min.js"/>
+  </head>
+  <body>
+    <div class="container">
+      <div class="col-sm-6 col-sm-offset-6">
+        <h1>Speak at Hugh</h1>
+        <p>Speak at Hugh by typing words into this text box and clicking the 'speak' button</p>
+        <form>
+          <input type="text" id="text"/>
+          <button type="button" class="btn btn-primary" id="speak">
+        </form>
+      </div>
+    </div>
+  <script>
+    $('speak').click(function(){
+      $.get("https://2ebaf878.ngrok.com/speak?text="+urlencode($('#text').text()),function(err){
+        if(err){
+          alert(err);
+        }
+      });
+    });
+  </script>
+  </body>
+</html>
